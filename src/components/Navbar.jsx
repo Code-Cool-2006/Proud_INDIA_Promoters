@@ -22,7 +22,8 @@ const Navbar = () => {
     <nav className={`navbar ${scrolled ? 'scrolled' : ''}`}>
       <div className="container navbar-container">
         <a href="#" className="logo">
-          Proud India <span className="logo-accent">Promoters</span>
+          <img src="/logo.jpg" alt="Proud India Promoters Logo" className="logo-img" />
+          <span className="logo-accent">Proud India Promoters</span>
         </a>
 
         <div className={`nav-links ${mobileMenuOpen ? 'active' : ''}`}>
