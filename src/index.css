@@ -164,3 +164,48 @@ img {
 .delay-200 { transition-delay: 0.2s; }
 .delay-300 { transition-delay: 0.3s; }
 .delay-400 { transition-delay: 0.4s; }
+
+/* Custom Emoji Cursor */
+@media (pointer: fine) {
+  * {
+    cursor: none !important;
+  }
+}
+
+/* Wrapper to handle positioning */
+.emoji-cursor-wrapper {
+  position: fixed;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  z-index: 9999;
+  /* Center the emoji on the mouse tip roughly */
+  margin-top: -12px;
+  margin-left: -12px;
+  /* Optional: Add a tiny bit of lag for a smooth feel, or remove for instant tracking */
+  transition: transform 0.05s linear; 
+}
+
+/* Inner element for animations/scaling */
+.emoji-cursor-inner {
+  display: block;
+  font-size: 24px;
+  line-height: 1;
+  filter: drop-shadow(0 2px 4px rgba(0,0,0,0.2));
+  transition: transform 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+/* Hover state animation - e.g. a "strike" or scale up */
+.emoji-cursor-inner.hover {
+  transform: scale(1.5) rotate(-20deg);
+}
+
+/* Hide on touch devices */
+@media (pointer: coarse) {
+  * {
+    cursor: auto !important;
+  }
+  .emoji-cursor-wrapper {
+    display: none;
+  }
+}

@@ -5,6 +5,7 @@ import Services from './components/Services';
 import Projects from './components/Projects';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
+import Cursor from './components/Cursor';
 // We don't need App.css since we have index.css and component styles
 
 function App() {
@@ -29,6 +30,7 @@ function App() {
 
   return (
     <div className="App">
+      <Cursor />
       <Navbar />
       <Hero />
       <Services />
