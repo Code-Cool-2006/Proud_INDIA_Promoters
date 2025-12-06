@@ -1,9 +1,6 @@
 
 import React, { useEffect, useState, useRef } from 'react';
-
-// You can change this emoji to whatever you like!
-// Examples: 🏗️, 👷, 🧱, 🛠️
-const CURSOR_EMOJI = '🪄'; 
+import cursorIcon from '../assets/cursor.svg';
 
 const Cursor = () => {
   const cursorRef = useRef(null);
@@ -22,6 +19,13 @@ const Cursor = () => {
       const { clientX, clientY } = e;
       if (cursor) {
         // Direct transform update for performance
+        // Note: We're not offsetting by half here because the SVG usually "points" with its top-left corner.
+        // If the SVG is centered (like a circle), we might want to offset.
+        // For a pointer/arrow, top-left (0,0) is usually the hotspot.
+        // Let's assume the user's SVG might be an arrow. If it's a shape, we might need centering.
+        // I'll add a small adjustment or just default to 0,0 for now.
+        // Actually, for the previous 'emoji' we centered it. For a pure custom cursor, usually the tip is top-left.
+        // Let's stick to (clientX, clientY) directly for the wrapper top-left.
         cursor.style.transform = `translate3d(${clientX}px, ${clientY}px, 0)`;
       }
     };
@@ -53,10 +57,12 @@ const Cursor = () => {
   }, []);
 
   return (
-    <div ref={cursorRef} className="emoji-cursor-wrapper">
-      <span className={`emoji-cursor-inner ${isHovering ? 'hover' : ''}`}>
-        {CURSOR_EMOJI}
-      </span>
+    <div ref={cursorRef} className="custom-cursor-wrapper">
+      <img 
+        src={cursorIcon} 
+        alt="Custom Cursor" 
+        className={`custom-cursor-img ${isHovering ? 'hover' : ''}`}
+      />
     </div>
   );
 };
