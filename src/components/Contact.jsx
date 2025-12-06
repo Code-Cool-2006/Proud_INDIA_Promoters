@@ -15,10 +15,11 @@ const Contact = () => {
             
             <div className="contact-details">
               <div className="contact-item">
-                <span className="icon">📍</span>
+                <span className="icon">👷</span>
                 <div>
                   <h4>Head Office</h4>
-                  <p>Address GF1, Shivam Residency, CTS No. 2227/3 & 2220/1, 2nd Stage Hanuman Nagar, Belagavi - 590019</p>
+                  <p>Address GF1, Shivam Residency, CTS No. 2227/3 & 2220/1,</p>
+                  <p>2nd Stage Hanuman Nagar, Belagavi - 590019</p>
                 </div>
               </div>
               <div className="contact-item">
