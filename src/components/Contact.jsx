@@ -18,21 +18,21 @@ const Contact = () => {
                 <span className="icon">📍</span>
                 <div>
                   <h4>Head Office</h4>
-                  <p>123 Construction Blvd, Build City, BC 90210</p>
+                  <p>Address GF1, Shivam Residency, CTS No. 2227/3 & 2220/1, 2nd Stage Hanuman Nagar, Belagavi - 590019</p>
                 </div>
               </div>
               <div className="contact-item">
                 <span className="icon">📞</span>
                 <div>
                   <h4>Call Us</h4>
-                  <p>(555) 123-4567</p>
+                  <p>(+91) 9449813292</p>
                 </div>
               </div>
               <div className="contact-item">
                 <span className="icon">✉️</span>
                 <div>
                   <h4>Email Us</h4>
-                  <p>info@proudindiapromoters.com</p>
+                  <p>Proudbgm@gmail.com</p>
                 </div>
               </div>
             </div>
